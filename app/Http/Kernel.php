@@ -2,7 +2,7 @@
 
 namespace App\Http;
 
-// use Illuminate\Support\Facades\Auth;
+use App\Http\Middleware\AdminLoginMiddleware;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -61,6 +61,6 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'adminlogin'=> App\Http\Middleware\UserMiddleware::class,
+        'adminlogin'=> AdminLoginMiddleware::class,
     ];
 }
